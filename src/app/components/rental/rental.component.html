@@ -1,0 +1,47 @@
+<div>
+  <div class="card">
+    <h5 class="card-header">Araç Kirala</h5>
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <td><h6 class="card-title">Alış Tarihi</h6></td>
+          <td><h6 class="card-title">Teslim Tarihi</h6></td>
+          <td></td>
+        </tr>
+        <tbody>
+          <tr>
+            <td>
+              <input
+                [ngModel]="rentStartDate | date: 'yyyy-MM-dd'"
+                (ngModelChange)="rentStartDate = $event"
+                class="form-control"
+                type="date"
+                id="rentStartDate"
+                required
+              />
+            </td>
+            <td>
+              <input
+                [ngModel]="rentEndDate | date: 'yyyy-MM-dd'"
+                (ngModelChange)="rentEndDate = $event"
+                class="form-control"
+                type="date"
+                id="rentEndDate"
+                required
+              />
+            </td>
+            <td>
+              <button
+                type="button"
+                routerLink="/cars/payment/{{ currentCarId }}"
+                class="btn btn-success"
+              >
+                Aracı Kirala
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
